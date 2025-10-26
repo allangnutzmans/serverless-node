@@ -1,27 +1,25 @@
-# Node.js com serverless framework
+# Node.js with Serverless Framework
 
-> Este é o projeto de exemplo para o curso [Node.js com serverless framework](tbd) na Alura.
+This project is designed to guide your learning throughout the course. It is divided into branches, each with a different goal. Each branch represents a step in the course, and you can navigate between them to view the code for each stage.
 
-Este projeto tem como objetivo guiar seu aprendizado durante o curso, e para isso, ele está dividido em branches, cada um com um objetivo diferente. Cada branch representa um passo do curso, e você pode navegar entre elas para ver o código de cada etapa.
+Additionally, there are two branches: `completo-vm` and `completo-serverless`. Each one includes its own documentation containing the complete project code for the environment it runs in.
 
-Além disso, existem dois branches: `completo-vm` e `completo-serverless`, cada um com sua própria documentação, que contém os códigos completos do projeto em cada um dos ambientes que ele está rodando.
+## Running Locally
 
-## Executando localmente
+The project was built as simply as possible to make it easy to use. No frameworks or libraries were used for the front end.
 
-O projeto foi feito da forma mais simples possível para facilitar o uso. Não foram usados nenhum framework ou biblioteca para o front-end.
-
-Todo o projeto roda a partir do arquivo `index.mjs`, que é o arquivo principal do projeto. Para executá-lo, basta rodar o comando:
+The entire project runs from the `index.mjs` file, which is the main entry point. To run it, just execute the following command:
 
 ```bash
 node index.mjs
 ```
 
-Ou se preferir, você pode usar o [nodemon](https://www.npmjs.com/package/nodemon) para executar o projeto:
+Or, if you prefer, you can use [nodemon](https://www.npmjs.com/package/nodemon) to run the project:
 
 ```bash
 npm run dev
 ```
 
-Isso vai garantir que você não precise ficar reiniciando o servidor a cada alteração que fizer. Todo o front-end da aplicação está na pasta `interface`, toda a API da aplicação está dentro do arquivo `index.mjs`.
+This ensures you don’t have to restart the server after every change you make. The entire front end of the application is located in the `interface` folder, and the whole API is contained within the `index.mjs` file.
 
-Depois de executar o projeto, você pode acessar a aplicação em `http://localhost:3000`.
+Once the project is running, you can access the application at `http://localhost:3000`.
