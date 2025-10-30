@@ -1,0 +1,47 @@
+org: allangnutzmans
+app: aws-node-alura-project
+service: aws-node-alura-project
+frameworkVersion: '3'
+
+package:
+  individually: true
+  patterns:
+    - '!node_modules/**'
+    - '!*.json'
+    - '!*.yml'
+    - '!*.md'
+    - 'api/**'
+    - 'schemas/**'
+
+params:
+  default:
+    dbName: aws-node-alura-project-db
+  dev:
+    connectionString: mongodb://localhost:27017/${param:dbName}
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  environment:
+    MONGODB_CONNECTION_STRING: ${param:connectionString}
+    MONGODB_DB_NAME: ${param:dbName}
+
+functions:
+  sendResponse:
+    handler: api/index.sendResponse
+    events:
+      - http:
+          path: /api/results
+          method: post
+          request:
+            schemas:
+              application/json: ${file(./schemas/sendResponse.json)}
+  getResult:
+    handler: api/index.getResult
+    events:
+      - http:
+          path: /api/results/{id}
+          method: get
